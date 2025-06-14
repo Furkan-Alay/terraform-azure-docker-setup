@@ -100,3 +100,9 @@ sudo apt update && sudo apt upgrade -y
 Depending on your operating system, install Docker and Docker Compose by following the official guide:
 
 [Install Docker Engine on Debian](https://docs.docker.com/engine/install/debian/)
+
+Make sure Docker is running and accessible via:
+```bash
+docker --version
+docker compose version
+```
