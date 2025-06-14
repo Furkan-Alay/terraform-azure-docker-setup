@@ -144,14 +144,38 @@ sudo apt update && sudo apt upgrade -y
   - Nginx Proxy Manager UI: http://<VM_Public_IP>:81
   - IT Tools App: http://<VM_Public_IP>:8090
  
-## 4.5 Connect to the Virtual Machine
-Use SSH to connect to your VM:
-```bash
-ssh -i ~/.ssh/<SSH_Key_Name> adminuser@<Virtual_Machine_Public_IP>
-```
-Replace <SSH_Key_Name> and <Virtual_Machine_Public_IP> with your values from the Azure portal.
+## 4.9 Configure Proxy Host in Nginx Proxy Manager
+You can now access your services via IP, but we will route them using a hostname.
+Option 1: Local Hosts File (Recommended)
+On your VM:
 
-Then, update and upgrade system packages:
 ```bash
-sudo apt update && sudo apt upgrade -y
+sudo nano /etc/hosts
 ```
+Add this line:
+```bash
+<VM_Public_IP> it-tools
+```
+On your Windows machine (open PowerShell as Administrator):
+```bash
+C:\Windows\System32\drivers\etc\hosts
+```
+Add:
+```bash
+<VM_Public_IP> it-tools
+```
+Set Up the Proxy Host
+- Go to http://<VM_Public_IP>:81
+- Log in to Nginx Proxy Manager
+- Navigate to Proxy Hosts > Add Proxy Host
+- Fill out the form as follows:
+```bash
+Domain Name:        it-tools.local
+Forward Hostname/IP: it-tools
+Forward Port:       80
+```
+Save the settings, and visit:
+```bash
+http://it-tools.local
+```
+You should see the IT Tools application.
