@@ -106,3 +106,21 @@ Make sure Docker is running and accessible via:
 docker --version
 docker compose version
 ```
+## 4.7 Create Docker Compose Files
+Switch to the root user:
+
+```bash
+sudo -i
+```
+Create a docker directory and two Docker Compose files:
+
+```bash
+mkdir docker
+cd docker
+touch docker-compose.yml docker-it.yml
+```
+You can find the content for these files in the cloned repository under:
+- docker/docker-compose.yml
+- docker/docker-it.yml
+
+Copy the contents accordingly.
