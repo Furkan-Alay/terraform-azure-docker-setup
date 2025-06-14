@@ -31,6 +31,58 @@ Follow the steps below to provision the infrastructure, configure the environmen
 Download the source code to your local machine via terminal:
 
 ```bash
-git clone https://github.com/<your-username>/<your-repo-name>.git
-cd <your-repo-name>
+git clone https://github.com/Furkan-Alay/terraform-azure-docker-setup.git
+cd terraform-azure-docker-setup
+```
+
+## 4.2 Authenticate to Azure
+
+Login to your Azure account using the Azure CLI:
+```bash
+az login
+```
+Once the login window appears, select your subscription. For example, if the Subscription ID is listed as 1, enter: 1
+This will authenticate and set your active subscription for Terraform.
+
+## 4.3 Generate SSH Key
+
+Navigate to your SSH directory and generate a new SSH key:
+```bash
+cd ~/.ssh
+ssh-keygen -t rsa -b 4096 -f <SSH_Key_Name>
+```
+Then, open your Terraform configuration file and update the following line:
+```bash
+public_key = file("~/.ssh/<SSH_Key_Name>.pub")
+```
+
+Once the login window appears, select your subscription. For example, if the Subscription ID is listed as 1, enter: 1
+This will authenticate and set your active subscription for Terraform.
+### 4.4 Initialize and Run Terraform
+Run the following Terraform commands in order:
+Initializes the Terraform working directory and downloads provider plugins.
+```bash
+terraform init
+```
+Formats your code to follow standard Terraform style conventions.
+```bash
+terraform fmt
+```
+Checks whether the configuration is syntactically valid.
+```bash
+terraform validate
+```
+Generates an execution plan to show what will be created.
+```bash
+terraform plan
+```
+Applies the changes required to reach the desired state. Type yes to confirm.
+```bash
+terraform apply
+```
+Download the source code to your local machine via terminal:
+
+```bash
+git clone https://github.com/Furkan-Alay/terraform-azure-docker-setup.git
+cd terraform-azure-docker-setup
 ```
