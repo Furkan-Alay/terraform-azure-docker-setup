@@ -57,8 +57,10 @@ public_key = file("~/.ssh/<SSH_Key_Name>.pub")
 ```
 
 Once the login window appears, select your subscription. For example, if the Subscription ID is listed as 1, enter: 1
+
 This will authenticate and set your active subscription for Terraform.
-### 4.4 Initialize and Run Terraform
+
+## 4.4 Initialize and Run Terraform
 Run the following Terraform commands in order:
 Initializes the Terraform working directory and downloads provider plugins.
 ```bash
@@ -80,9 +82,20 @@ Applies the changes required to reach the desired state. Type yes to confirm.
 ```bash
 terraform apply
 ```
-Download the source code to your local machine via terminal:
+### Once complete, your virtual machine will be successfully provisioned on Azure.
 
+## 4.5 Connect to the Virtual Machine
+Use SSH to connect to your VM:
 ```bash
-git clone https://github.com/Furkan-Alay/terraform-azure-docker-setup.git
-cd terraform-azure-docker-setup
+ssh -i ~/.ssh/<SSH_Key_Name> adminuser@<Virtual_Machine_Public_IP>
 ```
+Replace <SSH_Key_Name> and <Virtual_Machine_Public_IP> with your values from the Azure portal.
+
+Then, update and upgrade system packages:
+```bash
+sudo apt update && sudo apt upgrade -y
+```
+
+## 4.6 Install Docker Engine and Docker Compose
+Depending on your operating system, install Docker and Docker Compose by following the official guide:
+[Install Docker Engine on Debian](https://docs.docker.com/engine/install/debian/)
