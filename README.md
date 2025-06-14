@@ -8,3 +8,4 @@ To complete this project, make sure the following tools and accounts are availab
 - ✅ **Azure CLI** – Command-line interface to interact with Azure
 - ✅ **Azure Account** – Active Azure subscription with sufficient privileges
 - ✅ **Docker Desktop & Docker Compose** – To run containerized services locally or on remote VMs
+- ✅ **Any Terminal** – To run CLI Command (Gitbash,VsCode,Notebook,etc.)
