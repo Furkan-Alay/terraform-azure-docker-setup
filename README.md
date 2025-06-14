@@ -21,3 +21,16 @@ The objective of this project is to demonstrate hands-on DevOps skills by automa
 - Ensuring modular and reusable Infrastructure as Code (IaC) structure
 
 This setup reflects real-world practices in cloud infrastructure management and container orchestration.
+
+## 3. Setup Instructions
+
+Follow the steps below to provision the infrastructure, configure the environment, and deploy the services.
+
+### 3.1 Clone the Repository
+
+Download the source code to your local machine via terminal:
+
+```bash
+git clone https://github.com/<your-username>/<your-repo-name>.git
+cd <your-repo-name>
+```
