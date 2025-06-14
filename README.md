@@ -35,7 +35,7 @@ git clone https://github.com/Furkan-Alay/terraform-azure-docker-setup.git
 cd terraform-azure-docker-setup
 ```
 
-## 4.2 Authenticate to Azure
+## 3.2 Authenticate to Azure
 
 Login to your Azure account using the Azure CLI:
 ```bash
@@ -44,12 +44,12 @@ az login
 Once the login window appears, select your subscription. For example, if the Subscription ID is listed as 1, enter: 1
 This will authenticate and set your active subscription for Terraform.
 
-## 4.3 Generate SSH Key
+## 3.3 Generate SSH Key
 
 Navigate to your SSH directory and generate a new SSH key:
 ```bash
 cd ~/.ssh
-ssh-keygen -t rsa -b 4096 -f <SSH_Key_Name>
+ssh-keygen -t rsa -b 3096 -f <SSH_Key_Name>
 ```
 Then, open your Terraform configuration file and update the following line:
 ```bash
@@ -60,7 +60,7 @@ Once the login window appears, select your subscription. For example, if the Sub
 
 This will authenticate and set your active subscription for Terraform.
 
-## 4.4 Initialize and Run Terraform
+## 3.3 Initialize and Run Terraform
 Run the following Terraform commands in order:
 Initializes the Terraform working directory and downloads provider plugins.
 ```bash
@@ -84,7 +84,7 @@ terraform apply
 ```
 ### Once complete, your virtual machine will be successfully provisioned on Azure.
 
-## 4.5 Connect to the Virtual Machine
+## 3.5 Connect to the Virtual Machine
 Use SSH to connect to your VM:
 ```bash
 ssh -i ~/.ssh/<SSH_Key_Name> adminuser@<Virtual_Machine_Public_IP>
@@ -96,7 +96,7 @@ Then, update and upgrade system packages:
 sudo apt update && sudo apt upgrade -y
 ```
 
-## 4.6 Install Docker Engine and Docker Compose
+## 3.6 Install Docker Engine and Docker Compose
 Depending on your operating system, install Docker and Docker Compose by following the official guide:
 
 [Install Docker Engine on Debian](https://docs.docker.com/engine/install/debian/)
@@ -106,7 +106,7 @@ Make sure Docker is running and accessible via:
 docker --version
 docker compose version
 ```
-## 4.7 Create Docker Compose Files
+## 3.7 Create Docker Compose Files
 Switch to the root user:
 
 ```bash
@@ -125,7 +125,7 @@ You can find the content for these files in the cloned repository under:
 
 Copy the contents accordingly.
 
-## 4.8 Build and Run Docker Containers
+## 3.8 Build and Run Docker Containers
 Run the services using Docker Compose:
 
 ```bash
@@ -144,7 +144,7 @@ sudo apt update && sudo apt upgrade -y
   - Nginx Proxy Manager UI: http://<VM_Public_IP>:81
   - IT Tools App: http://<VM_Public_IP>:8090
  
-## 4.9 Configure Proxy Host in Nginx Proxy Manager
+## 3.9 Configure Proxy Host in Nginx Proxy Manager
 You can now access your services via IP, but we will route them using a hostname.
 Option 1: Local Hosts File (Recommended)
 On your VM:
@@ -179,3 +179,7 @@ Save the settings, and visit:
 http://it-tools.local
 ```
 You should see the IT Tools application.
+## 4. Contact
+For questions or support, please contact:
+
+📧 furkanalay72@gmail.com
