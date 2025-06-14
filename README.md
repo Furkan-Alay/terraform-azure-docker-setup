@@ -124,3 +124,34 @@ You can find the content for these files in the cloned repository under:
 - docker/docker-it.yml
 
 Copy the contents accordingly.
+
+## 4.8 Build and Run Docker Containers
+Run the services using Docker Compose:
+
+```bash
+docker compose -f docker-compose.yml -f docker-it.yml up -d
+```
+Replace <SSH_Key_Name> and <Virtual_Machine_Public_IP> with your values from the Azure portal.
+
+Then, update and upgrade system packages:
+```bash
+sudo apt update && sudo apt upgrade -y
+```
+⚠️ Important Notes:
+- Disable firewall or VPN if any issues occur.
+- Default ports:
+  - Nginx Default Site: http://<VM_Public_IP>:80
+  - Nginx Proxy Manager UI: http://<VM_Public_IP>:81
+  - IT Tools App: http://<VM_Public_IP>:8090
+ 
+## 4.5 Connect to the Virtual Machine
+Use SSH to connect to your VM:
+```bash
+ssh -i ~/.ssh/<SSH_Key_Name> adminuser@<Virtual_Machine_Public_IP>
+```
+Replace <SSH_Key_Name> and <Virtual_Machine_Public_IP> with your values from the Azure portal.
+
+Then, update and upgrade system packages:
+```bash
+sudo apt update && sudo apt upgrade -y
+```
