@@ -113,11 +113,10 @@ Create a docker directory and two Docker Compose files:
 ```bash
 mkdir docker
 cd docker
-touch docker-compose.yml docker-it.yml
+touch compose.yml
 ```
-You can find the content for these files in the cloned repository under:
-- docker/docker-compose.yml
-- docker/docker-it.yml
+You can find the content for compose.yml file in the cloned repository under:
+- docker/compose.yml
 
 Copy the contents accordingly.
 
@@ -125,7 +124,7 @@ Copy the contents accordingly.
 Run the services using Docker Compose:
 
 ```bash
-docker compose -f docker-compose.yml -f docker-it.yml up -d
+docker compose up -d
 ```
 
 Then, update and upgrade system packages:
