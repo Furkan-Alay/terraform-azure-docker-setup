@@ -56,10 +56,6 @@ Then, open your terraform/main.tf file and update the following line:
 public_key = file("~/.ssh/<SSH_Key_Name>.pub")
 ```
 
-Once the login window appears, select your subscription. For example, if the Subscription ID is listed as 1, enter: 1
-
-This will authenticate and set your active subscription for Terraform.
-
 ## 3.3 Initialize and Run Terraform
 Run the following Terraform commands in order:
 Initializes the Terraform working directory and downloads provider plugins.
