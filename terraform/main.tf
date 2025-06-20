@@ -83,6 +83,20 @@ resource "azurerm_network_security_rule" "npm_admin_rule" {
   network_security_group_name = azurerm_network_security_group.example_nsg.name
 }
 
+resource "azurerm_network_security_rule" "npm_it_rule" {
+  name                        = "It-Tools"
+  priority                    = 1005
+  direction                   = "Inbound"
+  access                      = "Allow"
+  protocol                    = "Tcp"
+  source_port_range           = "*"
+  destination_port_range      = "8090"
+  source_address_prefix       = "*"
+  destination_address_prefix  = "*"
+  resource_group_name         = azurerm_resource_group.example2.name
+  network_security_group_name = azurerm_network_security_group.example2_nsg.name
+}
+
 resource "azurerm_network_interface_security_group_association" "example" {
   network_interface_id      = azurerm_network_interface.example.id
   network_security_group_id = azurerm_network_security_group.example_nsg.id
