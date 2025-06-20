@@ -51,7 +51,7 @@ Navigate to your SSH directory and generate a new SSH key:
 cd ~/.ssh
 ssh-keygen -t rsa -b 3096 -f <SSH_Key_Name>
 ```
-Then, open your Terraform configuration file and update the following line:
+Then, open your terraform/main.tf file and update the following line:
 ```bash
 public_key = file("~/.ssh/<SSH_Key_Name>.pub")
 ```
