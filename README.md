@@ -127,7 +127,6 @@ Run the services using Docker Compose:
 ```bash
 docker compose -f docker-compose.yml -f docker-it.yml up -d
 ```
-Replace <SSH_Key_Name> and <Virtual_Machine_Public_IP> with your values from the Azure portal.
 
 Then, update and upgrade system packages:
 ```bash
