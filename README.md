@@ -157,7 +157,7 @@ C:\Windows\System32\drivers\etc\hosts
 ```
 Add:
 ```bash
-<VM_Public_IP> it-tools
+<VM_Public_IP> it-tools.local
 ```
 Set Up the Proxy Host
 - Go to http://<VM_Public_IP>:81
