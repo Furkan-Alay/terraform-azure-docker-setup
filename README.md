@@ -161,7 +161,7 @@ Add:
 ```
 Set Up the Proxy Host
 - Go to http://<VM_Public_IP>:81
-- Log in to Nginx Proxy Manager
+- Log in to Nginx Proxy Manager (default E-mail address=admin@example.com, default Password=changeme)
 - Navigate to Proxy Hosts > Add Proxy Host
 - Fill out the form as follows:
 ```bash
