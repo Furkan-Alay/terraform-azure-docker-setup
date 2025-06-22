@@ -9,6 +9,8 @@ services:
       - '80:80'
       - '81:81'
       - '443:443'
+    networks:
+      - shared
     volumes:
       - ./data:/data
       - ./letsencrypt:/etc/letsencrypt
@@ -19,3 +21,14 @@ services:
     restart: unless-stopped
     ports:
       - '8090:80'
+    networks:
+      - shared
+    volumes:
+      - it-volume:/app/data
+
+networks:
+  shared:
+    driver: bridge
+
+volumes:
+  it-volume:
