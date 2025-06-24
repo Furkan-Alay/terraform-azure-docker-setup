@@ -3,6 +3,7 @@ version: '3.9'
 services:
   app:
     image: 'jc21/nginx-proxy-manager:latest'
+    container_name: nginx-proxy-manager
     restart: unless-stopped
     ports:
       # These ports are in format <host-port>:<container-port>
@@ -30,15 +31,17 @@ services:
 
   db:
     image: 'jc21/mariadb-aria:latest'
+    container_name: mariadb
     restart: unless-stopped
     environment:
-      MYSQL_ROOT_PASSWORD: 'npm'
+      MYSQL_ROOT_PASSWORD_FILE: /run/secrets/db_root_pwd.txt
       MYSQL_DATABASE: 'npm'
       MYSQL_USER: 'npm'
-      MYSQL_PASSWORD: 'npm'
+      MYSQL_PASSWORD_FILE: /run/secrets/mysql_pwd.txt
       MARIADB_AUTO_UPGRADE: '1'
     volumes:
       - ./mysql:/var/lib/mysql
+      - ./secrets:/run/secrets:ro
     networks:
       - shared
   it-tools:
@@ -54,11 +57,6 @@ services:
 
 networks:
   shared:
-    driver: bridge
-
-volumes:
-  it-volume:
-
     driver: bridge
 
 volumes:
