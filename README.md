@@ -120,7 +120,31 @@ You can find the content for compose.yml file in the cloned repository under:
 
 Copy the contents accordingly.
 
-## 3.8 Build and Run Docker Containers
+## 3.8 Create Secrets for MySQL Access
+Before starting the Docker containers, create a secrets directory to securely store MySQL credentials. Follow the steps below inside the docker directory:
+
+```bash
+mkdir secrets
+cd secrets
+touch db_root_pwd.txt mysql_pwd.txt
+```
+Edit each file and add your preferred passwords:
+
+```bash
+nano db_root_pwd.txt
+nano mysql_pwd.txt
+```
+
+Then, restrict file access to ensure only the root user has permission to read them:
+
+```bash
+sudo chown root:root db_root_pwd.txt mysql_pwd.txt
+chmod 400 db_root_pwd.txt mysql_pwd.txt
+```
+
+Copy the contents accordingly.
+
+## 3.9 Build and Run Docker Containers
 Run the services using Docker Compose:
 
 ```bash
@@ -138,7 +162,7 @@ sudo apt update && sudo apt upgrade -y
   - Nginx Proxy Manager UI: http://<VM_Public_IP>:81
   - IT Tools App: http://<VM_Public_IP>:8090
  
-## 3.9 Configure Proxy Host in Nginx Proxy Manager
+## 4 Configure Proxy Host in Nginx Proxy Manager
 You can now access your services via IP, but we will route them using a hostname.
 Option 1: Local Hosts File (Recommended)
 On your VM:
@@ -173,7 +197,7 @@ Save the settings, and visit:
 http://it-tools.local
 ```
 You should see the IT Tools application.
-## 4. Contact
+## Additional
 For questions or support, please contact:
 
 📧 furkanalay72@gmail.com
