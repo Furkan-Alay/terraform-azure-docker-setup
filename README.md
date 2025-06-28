@@ -120,30 +120,6 @@ You can find the content for compose.yml file in the cloned repository under:
 
 Copy the contents accordingly.
 
-## 3.8 Create Secrets for MySQL Access
-Before starting the Docker containers, create a secrets directory to securely store MySQL credentials. Follow the steps below inside the docker directory:
-
-```bash
-mkdir secrets
-cd secrets
-touch db_root_pwd.txt mysql_pwd.txt
-```
-Edit each file and add your preferred passwords:
-
-```bash
-nano db_root_pwd.txt
-nano mysql_pwd.txt
-```
-
-Then, restrict file access to ensure only the root user has permission to read them:
-
-```bash
-sudo chown root:root db_root_pwd.txt mysql_pwd.txt
-chmod 400 db_root_pwd.txt mysql_pwd.txt
-```
-
-Copy the contents accordingly.
-
 ## 3.9 Build and Run Docker Containers
 Run the services using Docker Compose:
 
