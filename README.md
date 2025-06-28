@@ -80,7 +80,7 @@ terraform apply
 ```
 ### Once complete, your virtual machine will be successfully provisioned on Azure.
 
-## 3.5 Connect to the Virtual Machine
+## 3.4 Connect to the Virtual Machine
 Use SSH to connect to your VM:
 ```bash
 ssh -i ~/.ssh/<SSH_Key_Name> adminuser@<Virtual_Machine_Public_IP>
@@ -92,7 +92,7 @@ Then, update and upgrade system packages:
 sudo apt update && sudo apt upgrade -y
 ```
 
-## 3.6 Install Docker Engine and Docker Compose
+## 3.5 Install Docker Engine and Docker Compose
 Depending on your operating system, install Docker and Docker Compose by following the official guide:
 
 [Install Docker Engine](https://docs.docker.com/engine/install/)
@@ -102,7 +102,7 @@ Make sure Docker is running and accessible via:
 docker --version
 docker compose version
 ```
-## 3.7 Create Docker Compose Files
+## 3.6 Create Docker Compose Files
 Switch to the root user:
 
 ```bash
@@ -120,7 +120,7 @@ You can find the content for compose.yml file in the cloned repository under:
 
 Copy the contents accordingly.
 
-## 3.9 Build and Run Docker Containers
+## 3.7 Build and Run Docker Containers
 Run the services using Docker Compose:
 
 ```bash
